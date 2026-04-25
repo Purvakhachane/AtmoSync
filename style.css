@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f2027;
+  color: white;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+/* WEATHER SIDE */
+.weather-box {
+  width: 50%;
+  padding: 30px;
+  background: linear-gradient(to bottom, #2980b9, #6dd5fa);
+  position: relative;
+}
+
+/* NEWS SIDE */
+.news-box {
+  width: 50%;
+  padding: 30px;
+  overflow-y: auto;
+  background: #111;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  background: #27ae60;
+  color: white;
+  cursor: pointer;
+}
+
+.news-card {
+  background: #222;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.news-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.news-card p {
+  font-size: 13px;
+  color: #ccc;
+}
+
+/* ANIMATIONS */
+.sun {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 50px yellow;
+}
+
+.rain-drop {
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: lightblue;
+  animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+  from { transform: translateY(0); }
+  to { transform: translateY(400px); }
+}
+
+.snow {
+  position: absolute;
+  color: white;
+  animation: snow 5s linear infinite;
+}
+
+@keyframes snow {
+  from { transform: translateY(0); }
+  to { transform: translateY(400px); }
+}

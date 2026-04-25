@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main">
+
+  <!-- LEFT: WEATHER -->
+  <div class="weather-box">
+    <h1>🌤️ Weather</h1>
+
+    <input type="text" id="cityInput" placeholder="Enter city">
+    <button onclick="getWeather()">Search</button>
+    <button onclick="getLocationWeather()">📍 My Location</button>
+
+    <div id="weatherResult">
+      <h2 id="cityName"></h2>
+      <img id="weatherIcon">
+      <p id="temperature"></p>
+      <p id="condition"></p>
+      <p id="feelsLike"></p>
+      <p id="humidity"></p>
+      <p id="wind"></p>
+    </div>
+
+    <div id="animation"></div>
+  </div>
+
+  <!-- RIGHT: NEWS -->
+  <div class="news-box">
+    <h1>📰 Local News</h1>
+    <div id="news"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

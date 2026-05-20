@@ -1,43 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Weather App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Atmosync | Smart Weather Intelligence</title>
+
+  <!-- SEO -->
+  <meta 
+    name="description" 
+    content="Atmosync - Real-time weather intelligence with dynamic visuals and local news."
+  />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#1f4037">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="main">
+  <!-- MAIN APP -->
+  <div class="main">
 
-  <!-- LEFT: WEATHER -->
-  <div class="weather-box">
-    <h1>🌤️ Weather</h1>
+    <!-- LEFT PANEL : WEATHER -->
+    <div class="weather-box">
 
-    <input type="text" id="cityInput" placeholder="Enter city">
-    <button onclick="getWeather()">Search</button>
-    <button onclick="getLocationWeather()">📍 My Location</button>
+      <!-- LOGO -->
+      <div class="logo">
+        <span>🌤️</span>
+        <h1>Atmosync</h1>
+      </div>
 
-    <div id="weatherResult">
-      <h2 id="cityName"></h2>
-      <img id="weatherIcon">
-      <p id="temperature"></p>
-      <p id="condition"></p>
-      <p id="feelsLike"></p>
-      <p id="humidity"></p>
-      <p id="wind"></p>
+      <!-- TAGLINE -->
+      <p class="tagline">
+        Real-time weather intelligence & local insights
+      </p>
+
+      <!-- SEARCH -->
+      <div class="search-section">
+
+        <input 
+          type="text" 
+          id="cityInput" 
+          placeholder="Search city like Ahmedabad, London..."
+        >
+
+        <button 
+          onclick="getWeather()" 
+          aria-label="Search Weather"
+        >
+          Search
+        </button>
+
+        <button 
+          onclick="getLocationWeather()"
+          aria-label="Use Current Location"
+        >
+          📍
+        </button>
+
+      </div>
+
+      <!-- LOADING -->
+      <p id="loading"></p>
+
+      <!-- WEATHER RESULT -->
+      <div id="weatherResult">
+
+        <h2 id="cityName"></h2>
+
+        <div class="weather-main">
+
+          <img id="weatherIcon">
+
+          <div>
+            <h1 id="temperature"></h1>
+            <p id="condition"></p>
+          </div>
+
+        </div>
+
+        <!-- DETAILS -->
+        <div class="weather-details">
+
+          <div class="detail-card">
+            <h3>Feels Like</h3>
+            <p id="feelsLike"></p>
+          </div>
+
+          <div class="detail-card">
+            <h3>Humidity</h3>
+            <p id="humidity"></p>
+          </div>
+
+          <div class="detail-card">
+            <h3>Wind Speed</h3>
+            <p id="wind"></p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- WEATHER ANIMATION -->
+      <div id="animation"></div>
+
     </div>
 
-    <div id="animation"></div>
+    <!-- RIGHT PANEL : NEWS -->
+    <div class="news-box">
+
+      <div class="news-header">
+        <h1>📰 Local News</h1>
+        <p>Latest headlines based on your searched location</p>
+      </div>
+
+      <!-- NEWS CONTAINER -->
+      <div id="news">
+
+        <!-- Example Loading Card -->
+        <!--
+        <div class="news-card">
+          <h3>Headline</h3>
+          <p>Description</p>
+        </div>
+        -->
+
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- RIGHT: NEWS -->
-  <div class="news-box">
-    <h1>📰 Local News</h1>
-    <div id="news"></div>
-  </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>Built with ❤️ by Purva</p>
+  </footer>
 
-</div>
+  <!-- SCRIPT -->
+  <script src="script.js" defer></script>
 
-<script src="script.js"></script>
 </body>
 </html>
